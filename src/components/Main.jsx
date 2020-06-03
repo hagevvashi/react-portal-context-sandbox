@@ -1,17 +1,16 @@
-import React, { useContext, useState, useCallback } from "react";
+import React, { useState, useContext } from "react";
 import { MyContext } from "../domain/count/Context";
 
 export function Main() {
   const { state, dispatch } = useContext(MyContext);
-  const { job, setJob } = useState("");
-  const { annualIncome, setAnnualIncome } = useState(0);
-
+  const [job, setJob] = useState("");
+  const [annualIncome, setAnnualIncome] = useState(0);
   return (
     <div className="Main">
       <ul>
         {Object.entries(state).map(([key, value]) => {
           return (
-            <li>
+            <li key={key}>
               <dl>
                 <dt>{key}:</dt>
                 <dd>{value}</dd>
@@ -25,19 +24,21 @@ export function Main() {
       </div>
       <div>
         <p>
-          job:{" "}
+          job:
           <input
-            type="text"
+            id="job"
             name="job"
+            type="text"
             value={job}
             onChange={e => setJob(e.target.value)}
           />
         </p>
         <p>
-          annualIncome:{" "}
+          annualIncome:
           <input
             type="number"
             name="annualIncome"
+            id="annualIncome"
             value={annualIncome}
             onChange={e => setAnnualIncome(e.target.value)}
           />
