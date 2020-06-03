@@ -1,0 +1,21 @@
+.Header {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 2rem 0;
+  border: solid 1px;
+}
+.Main {
+  border: solid 1px;
+}
+ul {
+  display: table;
+}
+li {
+  display: table-row;
+}
+dt {
+  display: table-cell;
+}
+dd {
+  display: table-cell;
+}
